@@ -31,43 +31,70 @@
         .room-card.ready{border-left-color:var(--gold);background:linear-gradient(135deg,#FFFEF9,#FFF9E8)}
         .room-form{max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .35s ease,margin-top .35s ease}
         .room-form.open{max-height:340px;opacity:1;margin-top:14px}
-        .form-input{width:100%;padding:12px 14px;border:1.5px solid var(--cream-dark);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:16px;transition:all .3s;background:var(--cream);color:#2D2D2D}
+        .form-input{width:100%;padding:11px 14px;border:1.5px solid var(--cream-dark);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;transition:all .3s;background:var(--cream);color:#2D2D2D}
         .form-input:focus{outline:none;border-color:var(--forest);background:#fff;box-shadow:0 0 0 3px rgba(27,67,50,.08)}
         .form-input::placeholder{color:var(--faint)}
         input[type="date"]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.6}
+        .form-select{width:100%;padding:11px 14px;border:1.5px solid var(--cream-dark);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;transition:all .3s;background:var(--cream);color:#2D2D2D;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238B8172' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+        .form-select:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(27,67,50,.08)}
         .nominal-wrap{position:relative}
         .nominal-wrap .rp-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:600;color:var(--forest);pointer-events:none}
         .nominal-wrap .form-input{padding-left:42px}
         .room-letter{font-family:'Playfair Display',serif;font-weight:900;font-size:44px;color:var(--forest);line-height:1;transition:color .3s}
         .room-card.active .room-letter{color:var(--forest-light)}
         .room-card.ready .room-letter{color:var(--gold)}
-        .btn-primary{background:var(--forest);color:#fff;padding:14px 28px;border-radius:11px;font-weight:600;font-size:15px;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:10px;justify-content:center}
-        .btn-primary:hover:not(:disabled){background:var(--forest-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,67,50,.35)}
+        .btn-primary{background:var(--forest);color:#fff;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+        .btn-primary:hover:not(:disabled){background:var(--forest-light);transform:translateY(-1px);box-shadow:0 4px 16px rgba(27,67,50,.3)}
         .btn-primary:disabled{opacity:.35;cursor:not-allowed}
-        .btn-gold{background:var(--gold);color:#fff;padding:13px 24px;border-radius:10px;font-weight:600;font-size:14px;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:9px;justify-content:center}
-        .btn-gold:hover{background:var(--gold-dark);transform:translateY(-1px);box-shadow:0 4px 15px rgba(201,162,39,.35)}
-        .btn-outline{background:transparent;color:var(--forest);padding:13px 24px;border-radius:10px;font-weight:600;font-size:14px;border:2px solid var(--forest);cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:9px;justify-content:center}
+        .btn-gold{background:var(--gold);color:#fff;padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;border:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+        .btn-gold:hover{background:var(--gold-dark);transform:translateY(-1px)}
+        .btn-outline{background:transparent;color:var(--forest);padding:12px 24px;border-radius:10px;font-weight:600;font-size:14px;border:2px solid var(--forest);cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:8px;justify-content:center}
         .btn-outline:hover{background:var(--forest);color:#fff}
-        .btn-sm{padding:10px 18px;font-size:13px;border-radius:8px}
+        .btn-sm{padding:8px 16px;font-size:13px;border-radius:8px}
+        .btn-danger{background:#DC2626;color:#fff;padding:8px 16px;border-radius:8px;font-weight:600;font-size:13px;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+        .btn-danger:hover{background:#B91C1C}
+        .btn-edit{background:#2563EB;color:#fff;padding:6px 10px;border-radius:6px;font-size:12px;border:none;cursor:pointer;transition:all .2s}
+        .btn-edit:hover{background:#1D4ED8}
+        .btn-del{background:#FEE2E2;color:#DC2626;padding:6px 10px;border-radius:6px;font-size:12px;border:none;cursor:pointer;transition:all .2s}
+        .btn-del:hover{background:#FECACA}
         .counter-badge{background:var(--gold);color:#fff;font-size:13px;font-weight:700;padding:3px 12px;border-radius:20px;min-width:32px;text-align:center;display:none}
         .counter-badge.visible{display:inline-flex}
-        .tab-btn{padding:10px 20px;border-radius:10px 10px 0 0;font-weight:600;font-size:14px;border:2px solid var(--cream-dark);border-bottom:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;background:var(--cream-dark);color:var(--muted)}
+        .tab-btn{padding:9px 18px;border-radius:10px 10px 0 0;font-weight:600;font-size:13px;border:2px solid var(--cream-dark);border-bottom:none;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;background:var(--cream-dark);color:var(--muted);white-space:nowrap}
         .tab-btn.active{background:#fff;color:var(--forest);border-color:var(--forest)}
         .tab-btn:hover:not(.active){background:#fff;color:var(--forest-light)}
-        .filter-select{padding:10px 14px;border:1.5px solid var(--cream-dark);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;background:var(--cream);color:#2D2D2D;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238B8172' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
+        .filter-select{padding:9px 14px;border:1.5px solid var(--cream-dark);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;background:var(--cream);color:#2D2D2D;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238B8172' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px}
         .filter-select:focus{outline:none;border-color:var(--forest);box-shadow:0 0 0 3px rgba(27,67,50,.08)}
         .history-card{background:#fff;border-radius:12px;padding:16px 18px;border-left:4px solid var(--forest);transition:all .3s}
         .history-card:hover{box-shadow:0 4px 16px rgba(27,67,50,.08);transform:translateY(-1px)}
         .history-action{width:36px;height:36px;border-radius:8px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;background:transparent;color:#ccc;font-size:14px}
         .history-action:hover{background:#FEE2E2;color:#DC2626}
         .history-action.view-btn:hover{background:#ECFDF5;color:#16A34A}
-        .spinner{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+        .spinner{display:inline-block;width:16px;height:16px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
         @keyframes spin{to{transform:rotate(360deg)}}
         .status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
         .status-dot.online{background:#16A34A;box-shadow:0 0 6px rgba(22,163,74,.4)}
         .status-dot.offline{background:#DC2626;box-shadow:0 0 6px rgba(220,38,38,.4)}
         .status-dot.loading{background:#D97706;animation:pulse 1s ease-in-out infinite}
         @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+        /* Tabel Pengeluaran */
+        .exp-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--cream-dark);background:#fff}
+        .exp-table{width:100%;border-collapse:collapse;font-size:13px;min-width:800px}
+        .exp-table thead{background:var(--forest)}
+        .exp-table th{color:#fff;padding:11px 12px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px;text-align:left;white-space:nowrap}
+        .exp-table td{padding:10px 12px;border-bottom:1px solid var(--cream-dark);vertical-align:middle}
+        .exp-table tbody tr:hover{background:#FAFAF5}
+        .exp-table .total-row{background:var(--cream);font-weight:700;border-bottom:none}
+        .exp-table .total-row td{border-top:2px solid var(--forest);padding:12px}
+        .exp-table .no-data{text-align:center;padding:40px 20px;color:var(--faint)}
+        .exp-table .text-right{text-align:right}
+        .exp-table .text-center{text-align:center}
+        .exp-table .nowrap{white-space:nowrap}
+        .kat-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600}
+        .kat-operasional{background:#DBEAFE;color:#1E40AF}
+        .kat-perawatan{background:#D1FAE5;color:#065F46}
+        .kat-perbaikan{background:#FEF3C7;color:#92400E}
+        .kat-administrasi{background:#EDE9FE;color:#5B21B6}
+        /* Kwitansi */
         .kwitansi-paper{background:#fff;border:3px double var(--forest);padding:36px 28px;position:relative;max-width:720px;margin:0 auto;box-shadow:0 6px 30px rgba(0,0,0,.07)}
         .kwitansi-paper::before{content:'';position:absolute;inset:7px;border:1px solid var(--cream-dark);pointer-events:none}
         .kwitansi-header{font-family:'Playfair Display',serif;font-weight:900;font-size:26px;text-align:center;color:var(--forest);letter-spacing:8px;margin-bottom:6px}
@@ -119,8 +146,11 @@
         .empty-state .sub{font-size:13px;margin-top:6px}
         .result-count{font-size:12px;color:var(--muted);padding:8px 14px;background:var(--cream);border-radius:8px;display:inline-flex;align-items:center;gap:6px}
         .nominal-tag{font-size:12px;font-weight:700;color:var(--gold-dark);background:rgba(201,162,39,.1);padding:3px 10px;border-radius:6px}
+        .form-card{background:#fff;border-radius:12px;padding:20px 24px;border:1px solid var(--cream-dark);margin-bottom:20px}
+        .form-card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--forest);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+        .form-card h3 i{color:var(--gold);font-size:16px}
         @media print{body{background:#fff!important}.no-print{display:none!important}.modal-overlay{position:static!important;background:none!important;backdrop-filter:none!important;padding:0!important}.modal-content{max-height:none!important;overflow:visible!important;padding:0!important;background:#fff!important;border-radius:0!important;box-shadow:none!important;transform:none!important}.kwitansi-paper{box-shadow:none!important;border:3px double #333!important;page-break-inside:avoid}.kwitansi-paper::before{border-color:#ddd!important}.lunas-stamp{opacity:.8!important}.kwitansi-table th{background:#333!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.terbilang-box{background:#f5f5f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-        @media(max-width:640px){.room-letter{font-size:36px}.kwitansi-paper{padding:24px 16px}.kwitansi-header{font-size:20px;letter-spacing:5px}.kwitansi-table td,.kwitansi-table th{padding:7px 5px;font-size:10px}.kwitansi-table td:nth-child(3){max-width:80px;word-break:break-all}.lunas-stamp{font-size:12px;padding:8px 18px;letter-spacing:2px}.signature-area{text-align:center}.signature-space{height:50px}.tab-btn{padding:9px 14px;font-size:13px;flex:1;text-align:center}.btn-primary{width:100%;padding:14px 20px}.btn-gold,.btn-outline.btn-sm{flex:1}.modal-content{padding:16px;border-radius:12px}.toast-container{right:8px;left:8px;top:8px}.header-bg::after{height:24px}.terbilang-box{padding:10px 12px}.terbilang-box .value{font-size:13px}}
+        @media(max-width:640px){.room-letter{font-size:36px}.kwitansi-paper{padding:24px 16px}.kwitansi-header{font-size:20px;letter-spacing:5px}.kwitansi-table td,.kwitansi-table th{padding:7px 5px;font-size:10px}.kwitansi-table td:nth-child(3){max-width:80px;word-break:break-all}.lunas-stamp{font-size:12px;padding:8px 18px;letter-spacing:2px}.signature-area{text-align:center}.signature-space{height:50px}.tab-btn{padding:8px 12px;font-size:12px;flex:1;text-align:center}.btn-primary{width:100%}.btn-gold,.btn-outline.btn-sm{flex:1}.modal-content{padding:16px;border-radius:12px}.toast-container{right:8px;left:8px;top:8px}.header-bg::after{height:24px}.terbilang-box{padding:10px 12px}.terbilang-box .value{font-size:13px}.form-card{padding:16px}.form-card h3{font-size:16px}}
         @media(min-width:641px) and (max-width:1023px){.room-letter{font-size:40px}}
         ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--cream-dark);border-radius:3px}
         *:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -128,14 +158,13 @@
     </style>
 </head>
 <body class="min-h-screen relative">
-
     <div class="bg-shapes no-print" aria-hidden="true"><div class="bg-shape"></div><div class="bg-shape"></div><div class="bg-shape"></div></div>
     <div id="toast-container" class="toast-container no-print" aria-live="polite"></div>
 
     <div id="confirm-dialog" class="confirm-overlay">
         <div class="confirm-box">
             <div class="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center" style="background:#FEE2E2"><i class="fas fa-trash-alt text-xl" style="color:#DC2626"></i></div>
-            <h4 class="font-bold text-lg mb-2" style="color:var(--forest)">Hapus Kwitansi?</h4>
+            <h4 class="font-bold text-lg mb-2" style="color:var(--forest)">Hapus Data?</h4>
             <p id="confirm-text" class="text-sm mb-6" style="color:var(--muted)">Data tidak bisa dikembalikan.</p>
             <div class="flex items-center justify-center gap-3">
                 <button onclick="closeConfirm()" class="btn-outline btn-sm">Batal</button>
@@ -151,7 +180,7 @@
                 <span class="text-sm font-medium tracking-wide" style="color:var(--gold-light)">Sistem Manajemen</span>
             </div>
             <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2">Pembayaran <span style="color:var(--gold)">Kosan</span></h1>
-            <p class="text-sm sm:text-base md:text-lg max-w-md mx-auto" style="color:rgba(255,255,255,.45)">Kelola pembayaran kos bulanan dan buat kwitansi digital</p>
+            <p class="text-sm sm:text-base md:text-lg max-w-md mx-auto" style="color:rgba(255,255,255,.45)">Kelola pembayaran & pengeluaran kos bulanan</p>
             <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)">
                 <span id="db-dot" class="status-dot loading"></span>
                 <span id="db-text">Memuat sistem...</span>
@@ -160,21 +189,18 @@
     </header>
 
     <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 no-print">
-        <div class="flex items-end gap-1 mb-0">
+        <!-- Tab -->
+        <div class="flex items-end gap-1 mb-0 overflow-x-auto">
             <button class="tab-btn active" onclick="switchTab('input')" id="tab-input"><i class="fas fa-edit mr-1.5"></i>Input</button>
+            <button class="tab-btn" onclick="switchTab('pengeluaran')" id="tab-pengeluaran"><i class="fas fa-receipt mr-1.5"></i>Pengeluaran</button>
             <button class="tab-btn" onclick="switchTab('riwayat')" id="tab-riwayat"><i class="fas fa-clock-rotate-left mr-1.5"></i>Riwayat</button>
         </div>
 
+        <!-- Panel Input -->
         <div id="panel-input" class="bg-white rounded-b-2xl rounded-tr-2xl p-5 sm:p-6 md:p-8 shadow-sm border" style="border-color:var(--cream-dark)">
             <div class="flex flex-wrap items-center justify-between gap-3 mb-6 sm:mb-8">
-                <div>
-                    <h2 class="font-display text-xl sm:text-2xl md:text-3xl font-bold" style="color:var(--forest)">Daftar Kamar</h2>
-                    <p class="text-xs sm:text-sm mt-1" style="color:var(--muted)">Pilih kamar, isi data & nominal, lalu buat kwitansi</p>
-                </div>
-                <div class="flex items-center gap-2">
-                    <span class="text-xs sm:text-sm font-medium" style="color:var(--muted)">Dipilih:</span>
-                    <span id="counter-badge" class="counter-badge">0</span>
-                </div>
+                <div><h2 class="font-display text-xl sm:text-2xl md:text-3xl font-bold" style="color:var(--forest)">Daftar Kamar</h2><p class="text-xs sm:text-sm mt-1" style="color:var(--muted)">Pilih kamar, isi data & nominal, lalu buat kwitansi</p></div>
+                <div class="flex items-center gap-2"><span class="text-xs sm:text-sm font-medium" style="color:var(--muted)">Dipilih:</span><span id="counter-badge" class="counter-badge">0</span></div>
             </div>
             <div id="room-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 mb-10 sm:mb-12" role="list"></div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-6 sm:pt-8 border-t" style="border-color:var(--cream-dark)">
@@ -183,36 +209,67 @@
             </div>
         </div>
 
+        <!-- Panel Pengeluaran -->
+        <div id="panel-pengeluaran" class="bg-white rounded-b-2xl rounded-tr-2xl p-5 sm:p-6 md:p-8 shadow-sm border hidden" style="border-color:var(--cream-dark)">
+            <h2 class="font-display text-xl sm:text-2xl md:text-3xl font-bold mb-1" style="color:var(--forest)">Pengeluaran Kos</h2>
+            <p class="text-xs sm:text-sm mb-6" style="color:var(--muted)">Catat seluruh pengeluaran operasional kos</p>
+
+            <!-- Form -->
+            <div class="form-card">
+                <h3 id="exp-form-title"><i class="fas fa-plus-circle"></i> Tambah Pengeluaran</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                    <div><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Tanggal</label><input type="date" id="exp-tanggal" class="form-input"></div>
+                    <div><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Kategori</label>
+                        <select id="exp-kategori" class="form-select"><option value="">-- Pilih --</option><option value="Operasional">Operasional</option><option value="Perawatan">Perawatan</option><option value="Perbaikan">Perbaikan</option><option value="Administrasi">Administrasi</option></select>
+                    </div>
+                    <div><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Kamar / Area</label>
+                        <select id="exp-kamar" class="form-select"><option value="-">Umum / Area Umum</option></select>
+                    </div>
+                    <div><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Jumlah (Rp)</label>
+                        <div class="nominal-wrap"><span class="rp-prefix">Rp</span><input type="text" id="exp-jumlah" class="form-input" placeholder="500000" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')"></div>
+                    </div>
+                    <div><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Metode</label>
+                        <select id="exp-metode" class="form-select"><option value="Tunai">Tunai</option><option value="Non Tunai">Non Tunai</option></select>
+                    </div>
+                    <div><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Keterangan</label><input type="text" id="exp-keterangan" class="form-input" placeholder="Opsional"></div>
+                </div>
+                <div class="mb-4"><label class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Deskripsi</label><input type="text" id="exp-deskripsi" class="form-input" placeholder="Contoh: Listrik area umum"></div>
+                <div class="flex flex-wrap gap-3">
+                    <button id="exp-save-btn" class="btn-primary" onclick="savePengeluaran()"><i class="fas fa-save"></i> Simpan</button>
+                    <button id="exp-cancel-btn" class="btn-outline btn-sm" onclick="cancelEditExp()" style="display:none"><i class="fas fa-times"></i> Batal</button>
+                </div>
+            </div>
+
+            <!-- Filter -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-4 p-4 rounded-xl" style="background:var(--cream)">
+                <div class="flex items-center gap-2 flex-shrink-0"><i class="fas fa-filter text-sm" style="color:var(--gold)"></i><span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--muted)">Filter</span></div>
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
+                    <select id="exp-filter-bulan" class="filter-select flex-1" onchange="loadPengeluaran()"><option value="">-- Semua Bulan --</option><option value="01">Januari</option><option value="02">Februari</option><option value="03">Maret</option><option value="04">April</option><option value="05">Mei</option><option value="06">Juni</option><option value="07">Juli</option><option value="08">Agustus</option><option value="09">September</option><option value="10">Oktober</option><option value="11">November</option><option value="12">Desember</option></select>
+                    <select id="exp-filter-tahun" class="filter-select flex-1" onchange="loadPengeluaran()"><option value="">-- Semua Tahun --</option></select>
+                </div>
+                <button onclick="document.getElementById('exp-filter-bulan').value='';document.getElementById('exp-filter-tahun').value=new Date().getFullYear();loadPengeluaran()" class="btn-outline btn-sm" style="padding:8px 14px;font-size:12px;white-space:nowrap"><i class="fas fa-times"></i> Reset</button>
+            </div>
+            <div id="exp-info" class="mb-4" style="display:none"><span class="result-count"><i class="fas fa-receipt"></i> <span id="exp-info-text"></span></span></div>
+
+            <!-- Tabel -->
+            <div class="exp-table-wrap"><table class="exp-table"><thead><tr><th class="text-center" style="width:40px">No</th><th>Tanggal</th><th>Kategori</th><th>Deskripsi</th><th class="text-center">Kamar</th><th class="text-right">Jumlah</th><th>Metode</th><th>Keterangan</th><th class="text-center" style="width:90px">Aksi</th></tr></thead><tbody id="exp-tbody"><tr><td colspan="9" class="no-data"><i class="fas fa-spinner fa-spin"></i> Memuat...</td></tr></tbody></table></div>
+        </div>
+
+        <!-- Panel Riwayat -->
         <div id="panel-riwayat" class="bg-white rounded-b-2xl rounded-tr-2xl p-5 sm:p-6 md:p-8 shadow-sm border hidden" style="border-color:var(--cream-dark)">
             <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
-                <div>
-                    <h2 class="font-display text-xl sm:text-2xl md:text-3xl font-bold" style="color:var(--forest)">Riwayat Pembayaran</h2>
-                    <p class="text-xs sm:text-sm mt-1" style="color:var(--muted)">Filter berdasarkan bulan dan tahun</p>
-                </div>
+                <div><h2 class="font-display text-xl sm:text-2xl md:text-3xl font-bold" style="color:var(--forest)">Riwayat Pembayaran</h2><p class="text-xs sm:text-sm mt-1" style="color:var(--muted)">Filter berdasarkan bulan dan tahun</p></div>
                 <button class="btn-outline btn-sm" onclick="loadHistory()" style="padding:8px 16px;font-size:12px"><i class="fas fa-refresh"></i> Muat Ulang</button>
             </div>
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mb-5 p-4 rounded-xl" style="background:var(--cream)">
-                <div class="flex items-center gap-2 flex-shrink-0">
-                    <i class="fas fa-filter text-sm" style="color:var(--gold)"></i>
-                    <span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--muted)">Filter</span>
-                </div>
+                <div class="flex items-center gap-2 flex-shrink-0"><i class="fas fa-filter text-sm" style="color:var(--gold)"></i><span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--muted)">Filter</span></div>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
-                    <select id="filter-bulan" class="filter-select flex-1" onchange="applyFilter()">
-                        <option value="">-- Semua Bulan --</option>
-                        <option value="01">Januari</option><option value="02">Februari</option><option value="03">Maret</option>
-                        <option value="04">April</option><option value="05">Mei</option><option value="06">Juni</option>
-                        <option value="07">Juli</option><option value="08">Agustus</option><option value="09">September</option>
-                        <option value="10">Oktober</option><option value="11">November</option><option value="12">Desember</option>
-                    </select>
-                    <select id="filter-tahun" class="filter-select flex-1" onchange="applyFilter()">
-                        <option value="">-- Semua Tahun --</option>
-                    </select>
+                    <select id="filter-bulan" class="filter-select flex-1" onchange="applyFilter()"><option value="">-- Semua Bulan --</option><option value="01">Januari</option><option value="02">Februari</option><option value="03">Maret</option><option value="04">April</option><option value="05">Mei</option><option value="06">Juni</option><option value="07">Juli</option><option value="08">Agustus</option><option value="09">September</option><option value="10">Oktober</option><option value="11">November</option><option value="12">Desember</option></select>
+                    <select id="filter-tahun" class="filter-select flex-1" onchange="applyFilter()"><option value="">-- Semua Tahun --</option></select>
                 </div>
                 <button onclick="clearFilter()" class="btn-outline btn-sm" style="padding:8px 14px;font-size:12px;white-space:nowrap"><i class="fas fa-times"></i> Reset</button>
             </div>
-            <div id="result-info" class="mb-4" style="display:none">
-                <span class="result-count"><i class="fas fa-receipt"></i> <span id="result-count-text">0 kwitansi</span></span>
-            </div>
+            <div id="result-info" class="mb-4" style="display:none"><span class="result-count"><i class="fas fa-receipt"></i> <span id="result-count-text">0 kwitansi</span></span></div>
             <div id="history-list" class="space-y-3"></div>
         </div>
     </main>
@@ -223,8 +280,7 @@
         <div class="modal-content">
             <div class="flex items-center justify-between mb-5 no-print">
                 <h3 class="font-display text-lg sm:text-xl font-bold" style="color:var(--forest)">Kwitansi Pembayaran</h3>
-                <button onclick="closeModal()" class="w-10 h-10 rounded-full flex items-center justify-center" style="color:var(--forest)" aria-label="Tutup"
-                    onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='transparent'"><i class="fas fa-times"></i></button>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full flex items-center justify-center" style="color:var(--forest)" aria-label="Tutup" onmouseover="this.style.background='var(--cream-dark)'" onmouseout="this.style.background='transparent'"><i class="fas fa-times"></i></button>
             </div>
             <div id="kwitansi-content"></div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6 no-print">
@@ -236,211 +292,272 @@
 
     <script>
     /* ================================================================
-       Kamar A sampai K — total 11 kamar
+       KONFIGURASI & DATA
        ================================================================ */
     var db = null;
     var rooms = ['A','B','C','D','E','F','G','H','I','J','K'];
     var isSaving = false;
     var allHistoryData = [];
-    var today = new Date().toISOString().slice(0, 10);
+    var allExpData = [];
+    var editExpId = null; // null = tambah baru, ada ID = mode edit
+    var today = new Date().toISOString().slice(0,10);
 
     /* --- Terbilang --- */
-    function terbilang(n) {
-        if (n === 0) return 'Nol Rupiah';
-        var neg = n < 0; n = Math.abs(Math.floor(n));
-        var s = ['','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan',
-                 'Sepuluh','Sebelas','Dua Belas','Tiga Belas','Empat Belas','Lima Belas',
-                 'Enam Belas','Tujuh Belas','Delapan Belas','Sembilan Belas'];
-        function k(x) {
-            if (x<20) return s[x];
-            if (x<100) return s[Math.floor(x/10)]+' Puluh'+(x%10?' '+s[x%10]:'');
-            if (x<200) return 'Seratus'+(x%100?' '+k(x%100):'');
-            if (x<1000) return s[Math.floor(x/100)]+' Ratus'+(x%100?' '+k(x%100):'');
-            if (x<2000) return 'Seribu'+(x%1000?' '+k(x%1000):'');
-            if (x<1e6) return k(Math.floor(x/1000))+' Ribu'+(x%1000?' '+k(x%1000):'');
-            if (x<1e9) return k(Math.floor(x/1e6))+' Juta'+(x%1e6?' '+k(x%1e6):'');
-            if (x<1e12) return k(Math.floor(x/1e9))+' Miliar'+(x%1e9?' '+k(x%1e9):'');
-            return k(Math.floor(x/1e12))+' Triliun'+(x%1e12?' '+k(x%1e12):'');
-        }
-        return (neg?'Minus ':'')+k(n)+' Rupiah';
-    }
-    function formatRp(n) { return 'Rp '+Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
-    function cleanNominal(el) { el.value = el.value.replace(/[^0-9]/g,''); }
-    function esc(s) { var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+    function terbilang(n){if(n===0)return'Nol Rupiah';var neg=n<0;n=Math.abs(Math.floor(n));var s=['','Satu','Dua','Tiga','Empat','Lima','Enam','Tujuh','Delapan','Sembilan','Sepuluh','Sebelas','Dua Belas','Tiga Belas','Empat Belas','Lima Belas','Enam Belas','Tujuh Belas','Delapan Belas','Sembilan Belas'];function k(x){if(x<20)return s[x];if(x<100)return s[Math.floor(x/10)]+' Puluh'+(x%10?' '+s[x%10]:'');if(x<200)return'Seratus'+(x%100?' '+k(x%100):'');if(x<1000)return s[Math.floor(x/100)]+' Ratus'+(x%100?' '+k(x%100):'');if(x<2000)return'Seribu'+(x%1000?' '+k(x%1000):'');if(x<1e6)return k(Math.floor(x/1000))+' Ribu'+(x%1000?' '+k(x%1000):'');if(x<1e9)return k(Math.floor(x/1e6))+' Juta'+(x%1e6?' '+k(x%1e6):'');if(x<1e12)return k(Math.floor(x/1e9))+' Miliar'+(x%1e9?' '+k(x%1e9):'');return k(Math.floor(x/1e12))+' Triliun'+(x%1e12?' '+k(x%1e12):'');}return(neg?'Minus ':'')+k(n)+' Rupiah';}
+    function formatRp(n){return'Rp '+Math.floor(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');}
+    function cleanNominal(el){el.value=el.value.replace(/[^0-9]/g,'');}
+    function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 
-    /* --- Dropdown Tahun --- */
-    (function(){
-        var sel=document.getElementById('filter-tahun'), now=new Date().getFullYear();
-        for(var y=2024;y<=2090;y++){var o=document.createElement('option');o.value=y;o.textContent=y;if(y===now)o.selected=true;sel.appendChild(o);}
-        sel.value=now;
-    })();
+    /* --- Dropdown Tahun (kedua filter) --- */
+    (function(){var sels=[document.getElementById('filter-tahun'),document.getElementById('exp-filter-tahun')],now=new Date().getFullYear();for(var s=0;s<sels.length;s++){for(var y=2024;y<=2090;y++){var o=document.createElement('option');o.value=y;o.textContent=y;if(y===now)o.selected=true;sels[s].appendChild(o);}sels[s].value=now;}})();
 
-    /* --- Buat Grid Kamar --- */
-    var grid = document.getElementById('room-grid');
-    for(var i=0;i<rooms.length;i++){
-        var R=rooms[i];
-        var card=document.createElement('div'); card.id='card-'+R; card.className='room-card bg-white rounded-xl p-4 sm:p-5 shadow-sm';
-        card.innerHTML=
-            '<div class="flex items-center justify-between gap-3">'+
-                '<div class="flex items-center gap-3 sm:gap-4 min-w-0">'+
-                    '<div class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center flex-shrink-0" style="background:linear-gradient(145deg,var(--cream),var(--cream-dark))">'+
-                        '<span class="room-letter">'+R+'</span>'+
-                    '</div>'+
-                    '<div class="min-w-0">'+
-                        '<p class="font-semibold text-sm sm:text-base truncate" style="color:var(--forest)">Kamar '+R+'</p>'+
-                        '<p id="status-'+R+'" class="text-xs mt-0.5 truncate" style="color:var(--faint)">Belum dipilih</p>'+
-                    '</div>'+
-                '</div>'+
-                '<div class="flex-shrink-0">'+
-                    '<input type="checkbox" id="check-'+R+'" class="custom-check" onchange="toggleRoom(\''+R+'\')">'+
-                    '<label for="check-'+R+'" class="custom-check-label" aria-label="Pilih Kamar '+R+'"></label>'+
-                '</div>'+
-            '</div>'+
-            '<div id="form-'+R+'" class="room-form">'+
-                '<div class="space-y-3 pt-1">'+
-                    '<div><label for="nama-'+R+'" class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Nama Penghuni</label>'+
-                    '<input type="text" id="nama-'+R+'" class="form-input" placeholder="Masukkan nama lengkap" oninput="updStatus(\''+R+'\')" autocomplete="off"></div>'+
-                    '<div><label for="tanggal-'+R+'" class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Tanggal Pembayaran</label>'+
-                    '<input type="date" id="tanggal-'+R+'" class="form-input" value="'+today+'" oninput="updStatus(\''+R+'\')"></div>'+
-                    '<div><label for="nominal-'+R+'" class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Nominal Pembayaran</label>'+
-                    '<div class="nominal-wrap"><span class="rp-prefix">Rp</span>'+
-                    '<input type="text" id="nominal-'+R+'" class="form-input" placeholder="1500000" inputmode="numeric" oninput="cleanNominal(this);updStatus(\''+R+'\')"></div>'+
-                    '<p id="terbilang-'+R+'" class="text-xs mt-1.5 italic" style="color:var(--gold-dark);min-height:16px"></p></div>'+
-                '</div>'+
-            '</div>';
-        grid.appendChild(card);
-    }
+    /* --- Dropdown Kamar di Pengeluaran --- */
+    (function(){var sel=document.getElementById('exp-kamar');for(var i=0;i<rooms.length;i++){var o=document.createElement('option');o.value=rooms[i];o.textContent='Kamar '+rooms[i];sel.appendChild(o);}})();
 
-    /* --- Logika Kamar --- */
-    function toggleRoom(r){
-        var cb=document.getElementById('check-'+r),fm=document.getElementById('form-'+r),cd=document.getElementById('card-'+r);
-        if(cb.checked){fm.classList.add('open');cd.classList.add('active');updStatus(r);setTimeout(function(){document.getElementById('nama-'+r).focus();},350);}
-        else{fm.classList.remove('open');cd.classList.remove('active','ready');document.getElementById('nama-'+r).value='';document.getElementById('tanggal-'+r).value=today;document.getElementById('nominal-'+r).value='';document.getElementById('terbilang-'+r).textContent='';setS(r,'Belum dipilih','var(--faint)');}
-        updCount();updBtn();
-    }
-    function updStatus(r){
-        var n=document.getElementById('nama-'+r).value.trim(),t=document.getElementById('tanggal-'+r).value,raw=document.getElementById('nominal-'+r).value.replace(/[^0-9]/g,''),nom=parseInt(raw)||0,cd=document.getElementById('card-'+r),tb=document.getElementById('terbilang-'+r);
-        if(nom>0)tb.textContent=terbilang(nom);else tb.textContent='';
-        if(n&&t&&nom>0){setS(r,n+' \u2014 '+formatRp(nom),'var(--gold)');cd.classList.add('ready');}
-        else if(n&&t){setS(r,'Isi nominal...','#D97706');cd.classList.remove('ready');}
-        else if(n||t||raw){setS(r,'Lengkapi data...','#D97706');cd.classList.remove('ready');}
-        else{setS(r,'Dipilih \u2014 isi data','var(--forest-light)');cd.classList.remove('ready');}
-        updBtn();
-    }
+    /* --- Set tanggal default --- */
+    document.getElementById('exp-tanggal').value = today;
+
+    /* ================================================================
+       GRID KAMAR (Input Pembayaran)
+       ================================================================ */
+    var grid=document.getElementById('room-grid');
+    for(var i=0;i<rooms.length;i++){var R=rooms[i],card=document.createElement('div');card.id='card-'+R;card.className='room-card bg-white rounded-xl p-4 sm:p-5 shadow-sm';card.innerHTML='<div class="flex items-center justify-between gap-3"><div class="flex items-center gap-3 sm:gap-4 min-w-0"><div class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg flex items-center justify-center flex-shrink-0" style="background:linear-gradient(145deg,var(--cream),var(--cream-dark))"><span class="room-letter">'+R+'</span></div><div class="min-w-0"><p class="font-semibold text-sm sm:text-base truncate" style="color:var(--forest)">Kamar '+R+'</p><p id="status-'+R+'" class="text-xs mt-0.5 truncate" style="color:var(--faint)">Belum dipilih</p></div></div><div class="flex-shrink-0"><input type="checkbox" id="check-'+R+'" class="custom-check" onchange="toggleRoom(\''+R+'\')"><label for="check-'+R+'" class="custom-check-label" aria-label="Pilih Kamar '+R+'"></label></div></div><div id="form-'+R+'" class="room-form"><div class="space-y-3 pt-1"><div><label for="nama-'+R+'" class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Nama Penghuni</label><input type="text" id="nama-'+R+'" class="form-input" placeholder="Masukkan nama lengkap" oninput="updStatus(\''+R+'\')" autocomplete="off"></div><div><label for="tanggal-'+R+'" class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Tanggal Pembayaran</label><input type="date" id="tanggal-'+R+'" class="form-input" value="'+today+'" oninput="updStatus(\''+R+'\')"></div><div><label for="nominal-'+R+'" class="block text-xs font-medium mb-1.5" style="color:var(--muted)">Nominal Pembayaran</label><div class="nominal-wrap"><span class="rp-prefix">Rp</span><input type="text" id="nominal-'+R+'" class="form-input" placeholder="1500000" inputmode="numeric" oninput="cleanNominal(this);updStatus(\''+R+'\')"></div><p id="terbilang-'+R+'" class="text-xs mt-1.5 italic" style="color:var(--gold-dark);min-height:16px"></p></div></div></div>';grid.appendChild(card);}
+
+    function toggleRoom(r){var cb=document.getElementById('check-'+r),fm=document.getElementById('form-'+r),cd=document.getElementById('card-'+r);if(cb.checked){fm.classList.add('open');cd.classList.add('active');updStatus(r);setTimeout(function(){document.getElementById('nama-'+r).focus();},350);}else{fm.classList.remove('open');cd.classList.remove('active','ready');document.getElementById('nama-'+r).value='';document.getElementById('tanggal-'+r).value=today;document.getElementById('nominal-'+r).value='';document.getElementById('terbilang-'+r).textContent='';setS(r,'Belum dipilih','var(--faint)');}updCount();updBtn();}
+    function updStatus(r){var n=document.getElementById('nama-'+r).value.trim(),t=document.getElementById('tanggal-'+r).value,raw=document.getElementById('nominal-'+r).value.replace(/[^0-9]/g,''),nom=parseInt(raw)||0,cd=document.getElementById('card-'+r),tb=document.getElementById('terbilang-'+r);if(nom>0)tb.textContent=terbilang(nom);else tb.textContent='';if(n&&t&&nom>0){setS(r,n+' \u2014 '+formatRp(nom),'var(--gold)');cd.classList.add('ready');}else if(n&&t){setS(r,'Isi nominal...','#D97706');cd.classList.remove('ready');}else if(n||t||raw){setS(r,'Lengkapi data...','#D97706');cd.classList.remove('ready');}else{setS(r,'Dipilih \u2014 isi data','var(--forest-light)');cd.classList.remove('ready');}updBtn();}
     function setS(r,t,c){var e=document.getElementById('status-'+r);e.textContent=t;e.style.color=c;}
     function updCount(){var c=0;for(var i=0;i<rooms.length;i++)if(document.getElementById('check-'+rooms[i]).checked)c++;var b=document.getElementById('counter-badge');b.textContent=c;if(c>0)b.classList.add('visible');else b.classList.remove('visible');}
-    function updBtn(){
-        var ok=false;
-        for(var i=0;i<rooms.length;i++){var r=rooms[i];if(!document.getElementById('check-'+r).checked)continue;var raw=document.getElementById('nominal-'+r).value.replace(/[^0-9]/g,'');if(document.getElementById('nama-'+r).value.trim()&&document.getElementById('tanggal-'+r).value&&parseInt(raw)>0){ok=true;break;}}
-        document.getElementById('btn-generate').disabled=!ok||isSaving;
-    }
+    function updBtn(){var ok=false;for(var i=0;i<rooms.length;i++){var r=rooms[i];if(!document.getElementById('check-'+r).checked)continue;var raw=document.getElementById('nominal-'+r).value.replace(/[^0-9]/g,'');if(document.getElementById('nama-'+r).value.trim()&&document.getElementById('tanggal-'+r).value&&parseInt(raw)>0){ok=true;break;}}document.getElementById('btn-generate').disabled=!ok||isSaving;}
 
-    /* --- Tab --- */
+    /* ================================================================
+       TAB NAVIGASI
+       ================================================================ */
     function switchTab(t){
-        document.getElementById('tab-input').classList.toggle('active',t==='input');
-        document.getElementById('tab-riwayat').classList.toggle('active',t==='riwayat');
-        document.getElementById('panel-input').classList.toggle('hidden',t!=='input');
-        document.getElementById('panel-riwayat').classList.toggle('hidden',t!=='riwayat');
+        var tabs=['input','pengeluaran','riwayat'];
+        for(var i=0;i<tabs.length;i++){var id=tabs[i];document.getElementById('tab-'+id).classList.toggle('active',t===id);document.getElementById('panel-'+id).classList.toggle('hidden',t!==id);}
         if(t==='riwayat')loadHistory();
+        if(t==='pengeluaran')loadPengeluaran();
     }
 
-    /* --- Generate Kwitansi --- */
-    function generateKwitansi(){
-        if(isSaving)return;
-        var errors=[],data=[];
-        for(var i=0;i<rooms.length;i++){var r=rooms[i];if(!document.getElementById('check-'+r).checked)continue;var n=document.getElementById('nama-'+r).value.trim(),t=document.getElementById('tanggal-'+r).value,raw=document.getElementById('nominal-'+r).value.replace(/[^0-9]/g,''),nom=parseInt(raw)||0;if(!n)errors.push('Kamar '+r+': Nama belum diisi');if(!t)errors.push('Kamar '+r+': Tanggal belum diisi');if(nom<=0)errors.push('Kamar '+r+': Nominal belum diisi');if(n&&t&&nom>0)data.push({room:r,nama:n,tanggal:t,nominal:nom});}
-        if(errors.length){showToast(errors.join('<br>'),'error');return;}
-        var now=new Date(),ds=''+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0'),ctr=parseInt(localStorage.getItem('kw-ctr')||'0')+1;localStorage.setItem('kw-ctr',''+ctr);var kwNo='KW-'+ds+'-'+String(ctr).padStart(3,'0');
-        var btn=document.getElementById('btn-generate');btn.innerHTML='<span class="spinner"></span> Menyimpan...';btn.disabled=true;isSaving=true;
-        if(!db){buildKwitansi(data,kwNo,now);openModal();showToast('Kwitansi dibuat (mode offline)','error');btn.innerHTML='<i class="fas fa-file-invoice"></i> Buat Kwitansi';isSaving=false;updBtn();return;}
-        var rows=[];for(var j=0;j<data.length;j++)rows.push({no_kwitansi:kwNo,kamar:data[j].room,nama_penghuni:data[j].nama,tanggal_bayar:data[j].tanggal,nominal:data[j].nominal});
-        db.from('pembayaran').insert(rows).then(function(res){if(res.error)throw res.error;buildKwitansi(data,kwNo,now);openModal();showToast('Kwitansi berhasil disimpan!','success');}).catch(function(e){buildKwitansi(data,kwNo,now);openModal();showToast('Kwitansi dibuat, tapi gagal simpan: '+e.message,'error');}).finally(function(){btn.innerHTML='<i class="fas fa-file-invoice"></i> Buat Kwitansi';isSaving=false;updBtn();});
+    /* ================================================================
+       PENGELUARAN — CRUD
+       ================================================================ */
+    function getExpFormData(){
+        return{
+            tanggal:document.getElementById('exp-tanggal').value,
+            kategori:document.getElementById('exp-kategori').value,
+            deskripsi:document.getElementById('exp-deskripsi').value.trim(),
+            kamar:document.getElementById('exp-kamar').value,
+            jumlah:parseInt(document.getElementById('exp-jumlah').value.replace(/[^0-9]/g,''))||0,
+            metode:document.getElementById('exp-metode').value,
+            keterangan:document.getElementById('exp-keterangan').value.trim()
+        };
+    }
+    function validateExp(d){
+        var e=[];
+        if(!d.tanggal)e.push('Tanggal wajib diisi');
+        if(!d.kategori)e.push('Kategori wajib dipilih');
+        if(d.jumlah<=0)e.push('Jumlah wajib diisi');
+        return e;
+    }
+    function resetExpForm(){
+        document.getElementById('exp-tanggal').value=today;
+        document.getElementById('exp-kategori').value='';
+        document.getElementById('exp-deskripsi').value='';
+        document.getElementById('exp-kamar').value='-';
+        document.getElementById('exp-jumlah').value='';
+        document.getElementById('exp-metode').value='Tunai';
+        document.getElementById('exp-keterangan').value='';
+        editExpId=null;
+        document.getElementById('exp-form-title').innerHTML='<i class="fas fa-plus-circle"></i> Tambah Pengeluaran';
+        document.getElementById('exp-save-btn').innerHTML='<i class="fas fa-save"></i> Simpan';
+        document.getElementById('exp-cancel-btn').style.display='none';
+    }
+    function cancelEditExp(){resetExpForm();}
+
+    async function savePengeluaran(){
+        if(!db){showToast('Database tidak tersambung','error');return;}
+        var d=getExpFormData(),e=validateExp(d);
+        if(e.length){showToast(e.join('<br>'),'error');return;}
+
+        var btn=document.getElementById('exp-save-btn');
+        btn.innerHTML='<span class="spinner"></span> Menyimpan...';btn.disabled=true;
+
+        try{
+            if(editExpId){
+                // UPDATE
+                var{error}=await db.from('pengeluaran').update(d).eq('id',editExpId);
+                if(error)throw error;
+                showToast('Data berhasil diupdate!','success');
+            }else{
+                // INSERT
+                var{error}=await db.from('pengeluaran').insert([d]);
+                if(error)throw error;
+                showToast('Pengeluaran berhasil disimpan!','success');
+            }
+            resetExpForm();
+            loadPengeluaran();
+        }catch(err){
+            showToast('Gagal menyimpan: '+err.message,'error');
+        }finally{
+            btn.innerHTML=editExpId?'<i class="fas fa-check"></i> Update':'<i class="fas fa-save"></i> Simpan';
+            btn.disabled=false;
+        }
     }
 
-    /* --- Build Kwitansi --- */
-    function buildKwitansi(data,kwNo,date){
-        var fd=date.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}),total=0,tbody='';
-        for(var i=0;i<data.length;i++){var d=data[i],t=new Date(d.tanggal).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});total+=d.nominal;tbody+='<tr><td>'+(i+1)+'</td><td>'+d.room+'</td><td>'+esc(d.nama)+'</td><td>'+t+'</td><td>'+formatRp(d.nominal)+'</td></tr>';}
-        tbody+='<tr class="kwitansi-total"><td colspan="4" style="text-align:right">TOTAL</td><td>'+formatRp(total)+'</td></tr>';
-        document.getElementById('kwitansi-content').innerHTML='<div class="kwitansi-paper"><div class="kwitansi-header">KWITANSI</div><div class="kwitansi-meta">No: '+esc(kwNo)+'<br>Tanggal: '+fd+'</div><p class="kwitansi-intro">Telah diterima pembayaran dari:</p><table class="kwitansi-table"><thead><tr><th>No</th><th>Kamar</th><th>Nama Penghuni</th><th>Tgl Bayar</th><th>Nominal</th></tr></thead><tbody>'+tbody+'</tbody></table><div class="terbilang-box"><div class="label">Terbilang</div><div class="value">'+terbilang(total)+'</div></div><div style="text-align:center;margin:24px 0 0"><div class="lunas-stamp">PEMBAYARAN LUNAS</div></div><div class="signature-area"><p style="font-size:13px;color:#666">Hormat kami,</p><div class="signature-space"></div><p class="signature-name">Ttd<br><strong>Bunda Liza</strong></p></div></div>';
+    function editExp(id){
+        var row=null;
+        for(var i=0;i<allExpData.length;i++){if(allExpData[i].id===id){row=allExpData[i];break;}}
+        if(!row)return;
+        document.getElementById('exp-tanggal').value=row.tanggal;
+        document.getElementById('exp-kategori').value=row.kategori;
+        document.getElementById('exp-deskripsi').value=row.deskripsi||'';
+        document.getElementById('exp-kamar').value=row.kamar||'-';
+        document.getElementById('exp-jumlah').value=row.jumlah||'';
+        document.getElementById('exp-metode').value=row.metode||'Tunai';
+        document.getElementById('exp-keterangan').value=row.keterangan||'';
+        editExpId=id;
+        document.getElementById('exp-form-title').innerHTML='<i class="fas fa-pen"></i> Edit Pengeluaran';
+        document.getElementById('exp-save-btn').innerHTML='<i class="fas fa-check"></i> Update';
+        document.getElementById('exp-cancel-btn').style.display='inline-flex';
+        window.scrollTo({top:0,behavior:'smooth'});
     }
 
-    /* --- Riwayat --- */
-    function loadHistory(){
-        var c=document.getElementById('history-list');
-        if(!db){c.innerHTML='<div class="empty-state"><i class="fas fa-wifi" style="color:#DC2626"></i><p style="color:#DC2626">Database tidak tersambung</p><p class="sub">Tunggu hingga status hijau</p></div>';return;}
-        c.innerHTML='<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><p>Memuat data...</p></div>';
-        db.from('pembayaran').select('*').order('created_at',{ascending:false}).then(function(res){if(res.error)throw res.error;allHistoryData=res.data||[];applyFilter();}).catch(function(e){c.innerHTML='<div class="empty-state"><i class="fas fa-exclamation-triangle" style="color:#DC2626"></i><p style="color:#DC2626">Gagal memuat</p><p class="sub">'+esc(e.message)+'</p></div>';});
+    function confirmDeleteExp(id){
+        pendingDelExp=id;
+        document.getElementById('confirm-text').textContent='Hapus pengeluaran ini? Data tidak bisa dikembalikan.';
+        document.getElementById('confirm-dialog').classList.add('visible');
     }
-    function applyFilter(){
-        var bulan=document.getElementById('filter-bulan').value,tahun=document.getElementById('filter-tahun').value,c=document.getElementById('history-list'),filtered=[];
-        for(var i=0;i<allHistoryData.length;i++){var row=allHistoryData[i],d=row.tanggal_bayar;if(!d)continue;if(tahun&&d.substring(0,4)!==tahun)continue;if(bulan&&d.substring(5,7)!==bulan)continue;filtered.push(row);}
-        var info=document.getElementById('result-info'),infoText=document.getElementById('result-count-text');info.style.display='inline-block';
-        var label=filtered.length+' kwitansi';
-        if(bulan&&tahun){var nb=document.getElementById('filter-bulan').options[document.getElementById('filter-bulan').selectedIndex].text;label=filtered.length+' kwitansi di '+nb+' '+tahun;}
-        else if(bulan){var nb2=document.getElementById('filter-bulan').options[document.getElementById('filter-bulan').selectedIndex].text;label=filtered.length+' kwitansi di '+nb2;}
-        else if(tahun){label=filtered.length+' kwitansi di '+tahun;}
-        infoText.textContent=label;
-        if(!filtered.length){c.innerHTML='<div class="empty-state"><i class="fas fa-search"></i><p>Tidak ada data</p><p class="sub">Coba pilih filter lain</p></div>';return;}
-        var grouped={};for(var j=0;j<filtered.length;j++){var r=filtered[j];if(!grouped[r.no_kwitansi])grouped[r.no_kwitansi]={items:[],created:r.created_at};grouped[r.no_kwitansi].items.push(r);}
-        var html='',keys=Object.keys(grouped);
-        for(var k=0;k<keys.length;k++){var kw=keys[k],g=grouped[kw],tgl=new Date(g.created).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}),kamars=[],namas=[],totalNom=0;
-        for(var m=0;m<g.items.length;m++){kamars.push(g.items[m].kamar);namas.push(esc(g.items[m].nama_penghuni));totalNom+=(g.items[m].nominal||0);}
-        html+='<div class="history-card"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="flex items-center gap-2 mb-2 flex-wrap"><span class="font-bold text-xs px-2.5 py-1 rounded-md" style="background:var(--forest);color:#fff">'+esc(kw)+'</span><span class="text-xs" style="color:var(--faint)">'+tgl+'</span></div><p class="text-sm" style="color:var(--forest)"><strong>Kamar:</strong> '+kamars.join(', ')+'</p><p class="text-sm mt-0.5" style="color:var(--muted)"><strong>Penghuni:</strong> '+namas.join(', ')+'</p><div class="flex items-center gap-3 mt-1.5 flex-wrap"><span class="text-sm" style="color:var(--muted)"><strong>Jumlah:</strong> '+g.items.length+' kamar</span><span class="nominal-tag">'+formatRp(totalNom)+'</span></div></div><div class="flex items-center gap-1.5 flex-shrink-0"><button onclick="viewKw(\''+esc(kw)+'\')" class="history-action view-btn" title="Lihat"><i class="fas fa-eye"></i></button><button onclick="confirmDel(\''+esc(kw)+'\')" class="history-action" title="Hapus"><i class="fas fa-trash-alt"></i></button></div></div></div>';}
-        c.innerHTML=html;
+    var pendingDelExp=null;
+    document.getElementById('confirm-yes-btn').addEventListener('click',async function(){
+        if(pendingDelExp===null)return;
+        if(pendingDelKw!==null){/* hapus kwitansi */}else{
+            /* hapus pengeluaran */
+            var id=pendingDelExp;closeConfirm();
+            if(!db){showToast('Database tidak tersambung','error');return;}
+            try{
+                var{error}=await db.from('pengeluaran').delete().eq('id',id);
+                if(error)throw error;
+                showToast('Pengeluaran berhasil dihapus','success');
+                loadPengeluaran();
+                if(editExpId===id)resetExpForm();
+            }catch(e){showToast('Gagal menghapus: '+e.message,'error');}
+        }
+        pendingDelExp=null;
+    });
+
+    async function loadPengeluaran(){
+        var tbody=document.getElementById('exp-tbody');
+        if(!db){tbody.innerHTML='<tr><td colspan="9" class="no-data"><i class="fas fa-wifi" style="color:#DC2626"></i><br>Database tidak tersambung</td></tr>';return;}
+        tbody.innerHTML='<tr><td colspan="9" class="no-data"><i class="fas fa-spinner fa-spin"></i> Memuat...</td></tr>';
+        try{
+            var{data,error}=await db.from('pengeluaran').select('*').order('tanggal',{ascending:false}).order('created_at',{ascending:false});
+            if(error)throw error;
+            allExpData=data||[];
+            renderExpTable();
+        }catch(e){tbody.innerHTML='<tr><td colspan="9" class="no-data" style="color:#DC2626">Gagal memuat: '+esc(e.message)+'</td></tr>';}
     }
+
+    function renderExpTable(){
+        var bulan=document.getElementById('exp-filter-bulan').value,tahun=document.getElementById('exp-filter-tahun').value;
+        var filtered=[];
+        for(var i=0;i<allExpData.length;i++){var r=allExpData[i],d=r.tanggal;if(!d)continue;if(tahun&&d.substring(0,4)!==tahun)continue;if(bulan&&d.substring(5,7)!==bulan)continue;filtered.push(r);}
+
+        var info=document.getElementById('exp-info'),infoText=document.getElementById('exp-info-text');
+        info.style.display='inline-block';
+
+        var tbody=document.getElementById('exp-tbody');
+        if(!filtered.length){
+            infoText.textContent='0 pengeluaran';
+            tbody.innerHTML='<tr><td colspan="9" class="no-data"><i class="fas fa-inbox"></i><br>Tidak ada data untuk filter ini</td></tr>';
+            return;
+        }
+
+        var total=0,html='';
+        for(var j=0;j<filtered.length;j++){
+            var r=filtered[j];
+            total+=(r.jumlah||0);
+            var tgl=new Date(r.tanggal).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+            var katClass='kat-operasional';
+            if(r.kategori==='Perawatan')katClass='kat-perawatan';
+            else if(r.kategori==='Perbaikan')katClass='kat-perbaikan';
+            else if(r.kategori==='Administrasi')katClass='kat-administrasi';
+            var kamarText=r.kamar==='-'?'Umum':'Kamar '+r.kamar;
+
+            html+='<tr><td class="text-center">'+(j+1)+'</td><td class="nowrap">'+tgl+'</td><td><span class="kat-tag '+katClass+'">'+esc(r.kategori)+'</span></td><td>'+esc(r.deskripsi||'-')+'</td><td class="text-center">'+esc(kamarText)+'</td><td class="text-right nowrap">'+formatRp(r.jumlah||0)+'</td><td>'+esc(r.metode||'-')+'</td><td>'+esc(r.keterangan||'-')+'</td><td class="text-center nowrap"><button class="btn-edit" onclick="editExp('+r.id+')" title="Edit"><i class="fas fa-pen"></i></button> <button class="btn-del" onclick="confirmDeleteExp('+r.id+')" title="Hapus"><i class="fas fa-trash"></i></button></td></tr>';
+        }
+        html+='<tr class="total-row"><td colspan="5" class="text-right" style="font-weight:700">TOTAL</td><td class="text-right nowrap" style="color:var(--forest);font-size:14px;font-weight:700">'+formatRp(total)+'</td><td colspan="3"></td></tr>';
+        tbody.innerHTML=html;
+        infoText.textContent=filtered.length+' pengeluaran | Total: '+formatRp(total);
+    }
+
+    /* ================================================================
+       KWITANSI — Generate, Build, View
+       ================================================================ */
+    function generateKwitansi(){if(isSaving)return;var errors=[],data=[];for(var i=0;i<rooms.length;i++){var r=rooms[i];if(!document.getElementById('check-'+r).checked)continue;var n=document.getElementById('nama-'+r).value.trim(),t=document.getElementById('tanggal-'+r).value,raw=document.getElementById('nominal-'+r).value.replace(/[^0-9]/g,''),nom=parseInt(raw)||0;if(!n)errors.push('Kamar '+r+': Nama belum diisi');if(!t)errors.push('Kamar '+r+': Tanggal belum diisi');if(nom<=0)errors.push('Kamar '+r+': Nominal belum diisi');if(n&&t&&nom>0)data.push({room:r,nama:n,tanggal:t,nominal:nom});}if(errors.length){showToast(errors.join('<br>'),'error');return;}var now=new Date(),ds=''+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0'),ctr=parseInt(localStorage.getItem('kw-ctr')||'0')+1;localStorage.setItem('kw-ctr',''+ctr);var kwNo='KW-'+ds+'-'+String(ctr).padStart(3,'0');var btn=document.getElementById('btn-generate');btn.innerHTML='<span class="spinner"></span> Menyimpan...';btn.disabled=true;isSaving=true;if(!db){buildKwitansi(data,kwNo,now);openModal();showToast('Kwitansi dibuat (mode offline)','error');btn.innerHTML='<i class="fas fa-file-invoice"></i> Buat Kwitansi';isSaving=false;updBtn();return;}var rows=[];for(var j=0;j<data.length;j++)rows.push({no_kwitansi:kwNo,kamar:data[j].room,nama_penghuni:data[j].nama,tanggal_bayar:data[j].tanggal,nominal:data[j].nominal});db.from('pembayaran').insert(rows).then(function(res){if(res.error)throw res.error;buildKwitansi(data,kwNo,now);openModal();showToast('Kwitansi berhasil disimpan!','success');}).catch(function(e){buildKwitansi(data,kwNo,now);openModal();showToast('Kwitansi dibuat, tapi gagal simpan: '+e.message,'error');}).finally(function(){btn.innerHTML='<i class="fas fa-file-invoice"></i> Buat Kwitansi';isSaving=false;updBtn();});}
+
+    function buildKwitansi(data,kwNo,date){var fd=date.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'}),total=0,tbody='';for(var i=0;i<data.length;i++){var d=data[i],t=new Date(d.tanggal).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'});total+=d.nominal;tbody+='<tr><td>'+(i+1)+'</td><td>'+d.room+'</td><td>'+esc(d.nama)+'</td><td>'+t+'</td><td>'+formatRp(d.nominal)+'</td></tr>';}tbody+='<tr class="kwitansi-total"><td colspan="4" style="text-align:right">TOTAL</td><td>'+formatRp(total)+'</td></tr>';document.getElementById('kwitansi-content').innerHTML='<div class="kwitansi-paper"><div class="kwitansi-header">KWITANSI</div><div class="kwitansi-meta">No: '+esc(kwNo)+'<br>Tanggal: '+fd+'</div><p class="kwitansi-intro">Telah diterima pembayaran dari:</p><table class="kwitansi-table"><thead><tr><th>No</th><th>Kamar</th><th>Nama Penghuni</th><th>Tgl Bayar</th><th>Nominal</th></tr></thead><tbody>'+tbody+'</tbody></table><div class="terbilang-box"><div class="label">Terbilang</div><div class="value">'+terbilang(total)+'</div></div><div style="text-align:center;margin:24px 0 0"><div class="lunas-stamp">PEMBAYARAN LUNAS</div></div><div class="signature-area"><p style="font-size:13px;color:#666">Hormat kami,</p><div class="signature-space"></div><p class="signature-name">Ttd<br><strong>Bunda Liza</strong></p></div></div>';}
+
+    /* ================================================================
+       RIWAYAT PEMBAYARAN
+       ================================================================ */
+    function loadHistory(){var c=document.getElementById('history-list');if(!db){c.innerHTML='<div class="empty-state"><i class="fas fa-wifi" style="color:#DC2626"></i><p style="color:#DC2626">Database tidak tersambung</p></div>';return;}c.innerHTML='<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><p>Memuat data...</p></div>';db.from('pembayaran').select('*').order('created_at',{ascending:false}).then(function(res){if(res.error)throw res.error;allHistoryData=res.data||[];applyFilter();}).catch(function(e){c.innerHTML='<div class="empty-state"><i class="fas fa-exclamation-triangle" style="color:#DC2626"></i><p style="color:#DC2626">Gagal memuat</p><p class="sub">'+esc(e.message)+'</p></div>';});}
+
+    function applyFilter(){var bulan=document.getElementById('filter-bulan').value,tahun=document.getElementById('filter-tahun').value,c=document.getElementById('history-list'),filtered=[];for(var i=0;i<allHistoryData.length;i++){var row=allHistoryData[i],d=row.tanggal_bayar;if(!d)continue;if(tahun&&d.substring(0,4)!==tahun)continue;if(bulan&&d.substring(5,7)!==bulan)continue;filtered.push(row);}var info=document.getElementById('result-info'),infoText=document.getElementById('result-count-text');info.style.display='inline-block';var label=filtered.length+' kwitansi';if(bulan&&tahun){var nb=document.getElementById('filter-bulan').options[document.getElementById('filter-bulan').selectedIndex].text;label=filtered.length+' kwitansi di '+nb+' '+tahun;}else if(bulan){label=filtered.length+' kwitansi di '+document.getElementById('filter-bulan').options[document.getElementById('filter-bulan').selectedIndex].text;}else if(tahun){label=filtered.length+' kwitansi di '+tahun;}infoText.textContent=label;if(!filtered.length){c.innerHTML='<div class="empty-state"><i class="fas fa-search"></i><p>Tidak ada data</p></div>';return;}var grouped={};for(var j=0;j<filtered.length;j++){var r=filtered[j];if(!grouped[r.no_kwitansi])grouped[r.no_kwitansi]={items:[],created:r.created_at};grouped[r.no_kwitansi].items.push(r);}var html='',keys=Object.keys(grouped);for(var k=0;k<keys.length;k++){var kw=keys[k],g=grouped[kw],tgl=new Date(g.created).toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric',hour:'2-digit',minute:'2-digit'}),kamars=[],namas=[],totalNom=0;for(var m=0;m<g.items.length;m++){kamars.push(g.items[m].kamar);namas.push(esc(g.items[m].nama_penghuni));totalNom+=(g.items[m].nominal||0);}html+='<div class="history-card"><div class="flex items-start justify-between gap-3"><div class="min-w-0"><div class="flex items-center gap-2 mb-2 flex-wrap"><span class="font-bold text-xs px-2.5 py-1 rounded-md" style="background:var(--forest);color:#fff">'+esc(kw)+'</span><span class="text-xs" style="color:var(--faint)">'+tgl+'</span></div><p class="text-sm" style="color:var(--forest)"><strong>Kamar:</strong> '+kamars.join(', ')+'</p><p class="text-sm mt-0.5" style="color:var(--muted)"><strong>Penghuni:</strong> '+namas.join(', ')+'</p><div class="flex items-center gap-3 mt-1.5 flex-wrap"><span class="text-sm" style="color:var(--muted)"><strong>Jumlah:</strong> '+g.items.length+' kamar</span><span class="nominal-tag">'+formatRp(totalNom)+'</span></div></div><div class="flex items-center gap-1.5 flex-shrink-0"><button onclick="viewKw(\''+esc(kw)+'\')" class="history-action view-btn" title="Lihat"><i class="fas fa-eye"></i></button><button onclick="confirmDelKw(\''+esc(kw)+'\')" class="history-action" title="Hapus"><i class="fas fa-trash-alt"></i></button></div></div></div>';}c.innerHTML=html;}
+
     function clearFilter(){document.getElementById('filter-bulan').value='';document.getElementById('filter-tahun').value=new Date().getFullYear();applyFilter();}
 
-    /* --- Lihat & Hapus --- */
     function viewKw(kwNo){if(!db){showToast('Database tidak tersambung','error');return;}db.from('pembayaran').select('*').eq('no_kwitansi',kwNo).then(function(res){if(res.error)throw res.error;if(!res.data||!res.data.length){showToast('Data tidak ditemukan','error');return;}var items=[];for(var i=0;i<res.data.length;i++)items.push({room:res.data[i].kamar,nama:res.data[i].nama_penghuni,tanggal:res.data[i].tanggal_bayar,nominal:res.data[i].nominal||0});buildKwitansi(items,kwNo,new Date(res.data[0].created_at));openModal();}).catch(function(e){showToast('Gagal: '+e.message,'error');});}
-    var pendingDel=null;
-    function confirmDel(kwNo){pendingDel=kwNo;document.getElementById('confirm-text').textContent='Hapus kwitansi '+kwNo+'? Data tidak bisa dikembalikan.';document.getElementById('confirm-dialog').classList.add('visible');}
-    function closeConfirm(){document.getElementById('confirm-dialog').classList.remove('visible');pendingDel=null;}
-    document.getElementById('confirm-yes-btn').addEventListener('click',function(){if(!pendingDel)return;var kwNo=pendingDel;closeConfirm();if(!db){showToast('Database tidak tersambung','error');return;}db.from('pembayaran').delete().eq('no_kwitansi',kwNo).then(function(res){if(res.error)throw res.error;showToast('Kwitansi '+kwNo+' berhasil dihapus','success');loadHistory();}).catch(function(e){showToast('Gagal menghapus: '+e.message,'error');});});
 
-    /* --- Utilitas --- */
+    var pendingDelKw=null;
+    function confirmDelKw(kwNo){pendingDelKw=kwNo;pendingDelExp=null;document.getElementById('confirm-text').textContent='Hapus kwitansi '+kwNo+'? Data tidak bisa dikembalikan.';document.getElementById('confirm-dialog').classList.add('visible');}
+
+    /* ================================================================
+       UTILITAS
+       ================================================================ */
     function openModal(){document.getElementById('kwitansi-modal').classList.add('visible');document.body.style.overflow='hidden';}
     function closeModal(){document.getElementById('kwitansi-modal').classList.remove('visible');document.body.style.overflow='';}
     function printKwitansi(){window.print();}
     function resetAll(){var any=false;for(var i=0;i<rooms.length;i++)if(document.getElementById('check-'+rooms[i]).checked){document.getElementById('check-'+rooms[i]).checked=false;toggleRoom(rooms[i]);any=true;}if(any)showToast('Semua pilihan telah direset','success');}
     function showToast(msg,type){var c=document.getElementById('toast-container'),t=document.createElement('div');t.className='toast toast-'+type;var ico=type==='error'?'exclamation-circle':'check-circle';t.innerHTML='<i class="fas fa-'+ico+'"></i><span>'+msg+'</span>';c.appendChild(t);setTimeout(function(){t.classList.add('toast-exit');setTimeout(function(){t.remove();},300);},4500);}
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeConfirm();}});
+    function closeConfirm(){document.getElementById('confirm-dialog').classList.remove('visible');pendingDelKw=null;pendingDelExp=null;}
 
-    document.getElementById('db-text').textContent = 'Memuat database...';
+    /* Confirm dialog handler — menangani hapus kwitansi DAN pengeluaran */
+    document.getElementById('confirm-yes-btn').addEventListener('click',async function(){
+        if(pendingDelKw!==null){
+            var kwNo=pendingDelKw;closeConfirm();
+            if(!db){showToast('Database tidak tersambung','error');return;}
+            try{var{error}=await db.from('pembayaran').delete().eq('no_kwitansi',kwNo);if(error)throw error;showToast('Kwitansi '+kwNo+' berhasil dihapus','success');loadHistory();}catch(e){showToast('Gagal menghapus: '+e.message,'error');}
+            pendingDelKw=null;
+        }else if(pendingDelExp!==null){
+            var id=pendingDelExp;closeConfirm();
+            if(!db){showToast('Database tidak tersambung','error');return;}
+            try{var{error}=await db.from('pengeluaran').delete().eq('id',id);if(error)throw error;showToast('Pengeluaran berhasil dihapus','success');loadPengeluaran();if(editExpId===id)resetExpForm();}catch(e){showToast('Gagal menghapus: '+e.message,'error');}
+            pendingDelExp=null;
+        }
+    });
+
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeConfirm();}});
+    document.getElementById('db-text').textContent='Memuat database...';
 
     /* ================================================================
-       Muat Supabase di background — tidak memblokir halaman
+       MUAT SUPABASE DI BACKGROUND
        ================================================================ */
-    var supabaseScript = document.createElement('script');
-    supabaseScript.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
-    supabaseScript.onload = function() {
-        try {
-            if (window.supabase && window.supabase.createClient) {
-                db = window.supabase.createClient(
-                    'https://yibgewgwtcvmmtsbqapo.supabase.co',
-                    'sb_publishable_m0me-jTb8MYtIwuv9szjCA_jvoGci_2'
-                );
-                db.from('pembayaran').select('id').limit(1).then(function(res) {
-                    if (res.error) throw res.error;
-                    document.getElementById('db-dot').className = 'status-dot online';
-                    document.getElementById('db-text').textContent = 'Database terhubung';
-                }).catch(function(e) {
-                    document.getElementById('db-dot').className = 'status-dot offline';
-                    document.getElementById('db-text').textContent = 'DB gagal — ' + e.message.substring(0, 45);
-                    db = null;
-                });
+    var supabaseScript=document.createElement('script');
+    supabaseScript.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+    supabaseScript.onload=function(){
+        try{
+            if(window.supabase&&window.supabase.createClient){
+                db=window.supabase.createClient('https://yibgewgwtcvmmtsbqapo.supabase.co','sb_publishable_m0me-jTb8MYtIwuv9szjCA_jvoGci_2');
+                db.from('pembayaran').select('id').limit(1).then(function(res){
+                    if(res.error)throw res.error;
+                    document.getElementById('db-dot').className='status-dot online';
+                    document.getElementById('db-text').textContent='Database terhubung';
+                }).catch(function(e){document.getElementById('db-dot').className='status-dot offline';document.getElementById('db-text').textContent='DB gagal — '+e.message.substring(0,45);db=null;});
             }
-        } catch(e) {
-            document.getElementById('db-dot').className = 'status-dot offline';
-            document.getElementById('db-text').textContent = 'Gagal inisialisasi database';
-            db = null;
-        }
+        }catch(e){document.getElementById('db-dot').className='status-dot offline';document.getElementById('db-text').textContent='Gagal inisialisasi';db=null;}
     };
-    supabaseScript.onerror = function() {
-        document.getElementById('db-dot').className = 'status-dot offline';
-        document.getElementById('db-text').textContent = 'Library database gagal dimuat';
-        db = null;
-    };
+    supabaseScript.onerror=function(){document.getElementById('db-dot').className='status-dot offline';document.getElementById('db-text').textContent='Library database gagal dimuat';db=null;};
     document.head.appendChild(supabaseScript);
     </script>
 </body>
