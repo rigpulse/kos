@@ -103,6 +103,13 @@
         .btn-del { background: #FEE2E2; color: #DC2626; padding: 6px 10px; border-radius: 6px; font-size: 12px; border: none; cursor: pointer; transition: all .2s; }
         .btn-del:hover { background: #FECACA; }
         
+        .edit-name-input { padding: 5px 10px; border: 1.5px solid var(--forest); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 13px; width: 100%; background: #fff; color: #2D2D2D; }
+        .edit-name-input:focus { outline: none; box-shadow: 0 0 0 2px rgba(27,67,50,.15); }
+        .btn-save-sm { background: #16A34A; color: #fff; padding: 5px 12px; border-radius: 6px; font-size: 12px; border: none; cursor: pointer; font-weight: 600; transition: all .2s; }
+        .btn-save-sm:hover { background: #15803D; }
+        .btn-cancel-sm { background: transparent; color: var(--muted); padding: 5px 12px; border-radius: 6px; font-size: 12px; border: 1.5px solid var(--cream-dark); cursor: pointer; font-weight: 500; transition: all .2s; }
+        .btn-cancel-sm:hover { background: var(--cream-dark); }
+        
         /* Badges & Tabs */
         .counter-badge { background: var(--gold); color: #fff; font-size: 13px; font-weight: 700; padding: 3px 12px; border-radius: 20px; min-width: 32px; text-align: center; display: none; }
         .counter-badge.visible { display: inline-flex; }
@@ -300,7 +307,7 @@
                 <i class="fas fa-building text-sm" style="color:var(--gold-light)"></i>
                 <span class="text-sm font-medium tracking-wide" style="color:var(--gold-light)">Sistem Manajemen</span>
             </div>
-            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2">Pembayaran <span style="color:var(--gold)">Kosan Bunda LIZA</span></h1>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-2">Pembayaran <span style="color:var(--gold)">Kosan</span></h1>
             <p class="text-sm sm:text-base md:text-lg max-w-md mx-auto" style="color:rgba(255,255,255,.45)">Kelola pembayaran & pengeluaran kos bulanan</p>
             <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)">
                 <span id="db-dot" class="status-dot loading"></span>
@@ -382,14 +389,13 @@
                 <div class="flex items-center gap-2 flex-shrink-0"><i class="fas fa-filter text-sm" style="color:var(--gold)"></i><span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--muted)">Filter</span></div>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
                     <select id="exp-filter-bulan" class="filter-select flex-1">
-                        <option value="">-- Semua Bulan --</option>
                         <option value="01">Januari</option> <option value="02">Februari</option> <option value="03">Maret</option>
                         <option value="04">April</option> <option value="05">Mei</option> <option value="06">Juni</option>
                         <option value="07">Juli</option> <option value="08">Agustus</option> <option value="09">September</option>
                         <option value="10">Oktober</option> <option value="11">November</option> <option value="12">Desember</option>
                     </select>
                     <select id="exp-filter-tahun" class="filter-select flex-1">
-                        <option value="">-- Semua Tahun --</option>
+                        <!-- Tahun akan diisi via Javascript -->
                     </select>
                 </div>
                 <button id="btn-reset-exp-filter" class="btn-outline btn-sm" style="padding:8px 14px;font-size:12px;white-space:nowrap"><i class="fas fa-times"></i> Reset</button>
@@ -416,18 +422,35 @@
                 <div class="flex items-center gap-2 flex-shrink-0"><i class="fas fa-filter text-sm" style="color:var(--gold)"></i><span class="text-xs font-semibold uppercase tracking-wider" style="color:var(--muted)">Filter</span></div>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-1">
                     <select id="filter-bulan" class="filter-select flex-1">
-                        <option value="">-- Semua Bulan --</option>
                         <option value="01">Januari</option> <option value="02">Februari</option> <option value="03">Maret</option>
                         <option value="04">April</option> <option value="05">Mei</option> <option value="06">Juni</option>
                         <option value="07">Juli</option> <option value="08">Agustus</option> <option value="09">September</option>
                         <option value="10">Oktober</option> <option value="11">November</option> <option value="12">Desember</option>
                     </select>
                     <select id="filter-tahun" class="filter-select flex-1">
-                        <option value="">-- Semua Tahun --</option>
+                        <!-- Tahun akan diisi via Javascript -->
                     </select>
                 </div>
                 <button id="btn-reset-history-filter" class="btn-outline btn-sm" style="padding:8px 14px;font-size:12px;white-space:nowrap"><i class="fas fa-times"></i> Reset</button>
             </div>
+            
+            <!-- PANEL STATUS PEMBAYARAN -->
+            <div id="payment-status-summary" class="mb-5 p-4 rounded-xl border" style="background:#fff; border-color:var(--cream-dark); display:none;">
+                <h4 class="font-bold text-sm mb-3" style="color:var(--forest)">
+                    <i class="fas fa-chart-pie mr-1.5" style="color:var(--gold)"></i>Status Pembayaran <span id="status-period-text"></span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-3 rounded-lg" style="background:#ECFDF5; border:1px solid #A7F3D0;">
+                        <div class="text-xs font-semibold mb-2" style="color:#065F46;">Sudah Bayar (<span id="count-paid">0</span>)</div>
+                        <div id="list-paid" class="flex flex-wrap gap-1.5"></div>
+                    </div>
+                    <div class="p-3 rounded-lg" style="background:#FEF2F2; border:1px solid #FECACA;">
+                        <div class="text-xs font-semibold mb-2" style="color:#991B1B;">Belum Bayar (<span id="count-unpaid">0</span>)</div>
+                        <div id="list-unpaid" class="flex flex-wrap gap-1.5"></div>
+                    </div>
+                </div>
+            </div>
+
             <div id="result-info" class="mb-4" style="display:none"><span class="result-count"><i class="fas fa-receipt"></i> <span id="result-count-text">0 kwitansi</span></span></div>
             <div id="history-list" class="space-y-3"></div>
         </div>
@@ -478,16 +501,23 @@
         // Setup Init UI Dropdowns
         function setupInitData() {
             const sels = [document.getElementById('filter-tahun'), document.getElementById('exp-filter-tahun')];
-            const now = new Date().getFullYear();
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = String(now.getMonth() + 1).padStart(2, '0');
+            
             for(let s=0; s<sels.length; s++){
                 for(let y=2024; y<=2090; y++){
                     let o = document.createElement('option');
                     o.value = y; o.textContent = y;
-                    if(y === now) o.selected = true;
                     sels[s].appendChild(o);
                 }
-                sels[s].value = now;
             }
+
+            // Set default filter ke bulan dan tahun ini (Current Month & Year)
+            document.getElementById('filter-tahun').value = currentYear;
+            document.getElementById('exp-filter-tahun').value = currentYear;
+            document.getElementById('filter-bulan').value = currentMonth;
+            document.getElementById('exp-filter-bulan').value = currentMonth;
 
             const selKamar = document.getElementById('exp-kamar');
             for(let i=0; i<rooms.length; i++){
@@ -590,7 +620,28 @@
 
         function toggleRoom(r) {
             let cb = document.getElementById('check-'+r), fm = document.getElementById('form-'+r), cd = document.getElementById('card-'+r);
+            
             if(cb.checked) {
+                // LOGIKA BARU: Batasi hanya 1 kamar yang bisa dipilih dalam 1 waktu
+                for(let i=0; i<rooms.length; i++) {
+                    let otherRoom = rooms[i];
+                    if(otherRoom !== r && document.getElementById('check-'+otherRoom).checked) {
+                        // Batalkan centang kamar lain
+                        document.getElementById('check-'+otherRoom).checked = false;
+                        let otherFm = document.getElementById('form-'+otherRoom);
+                        let otherCd = document.getElementById('card-'+otherRoom);
+                        
+                        otherFm.classList.remove('open'); 
+                        otherCd.classList.remove('active','ready');
+                        
+                        document.getElementById('nama-'+otherRoom).value = ''; 
+                        document.getElementById('tanggal-'+otherRoom).value = today;
+                        document.getElementById('nominal-'+otherRoom).value = ''; 
+                        document.getElementById('terbilang-'+otherRoom).textContent = '';
+                        setS(otherRoom, 'Belum dipilih', 'var(--faint)');
+                    }
+                }
+
                 fm.classList.add('open'); cd.classList.add('active'); updStatus(r);
                 setTimeout(() => document.getElementById('nama-'+r).focus(), 350);
             } else {
@@ -864,6 +915,7 @@
 
                 buildKwitansi(data, kwNo, now); openModal();
                 showToast('Kwitansi berhasil disimpan!', 'success');
+                resetAll(); // Otomatis reset form jika sukses
             } catch(e) {
                 buildKwitansi(data, kwNo, now); openModal();
                 showToast('Kwitansi dibuat, tapi gagal simpan DB: '+e.message, 'error');
@@ -915,7 +967,7 @@
             c.innerHTML = '<div class="empty-state"><i class="fas fa-spinner fa-spin"></i><p>Memuat data...</p></div>';
             
             try {
-                // Asumsi ada kolom created_at, jika tidak ada, Supabase mungkin error, namun secara standar ada
+                // Ambil semua riwayat
                 const { data, error } = await db.from('pembayaran').select('*').order('created_at', {ascending: false});
                 if(error) throw error;
                 allHistoryData = data || [];
@@ -931,6 +983,7 @@
             const c = document.getElementById('history-list');
             let filtered = [];
             
+            // Filter berdasarkan tanggal_bayar di database
             for(let i=0; i<allHistoryData.length; i++) {
                 let row = allHistoryData[i], d = row.tanggal_bayar;
                 if(!d) continue;
@@ -939,11 +992,61 @@
                 filtered.push(row);
             }
             
+            // --- LOGIKA STATUS PEMBAYARAN ---
+            let paidRooms = new Set();
+            for(let i=0; i<filtered.length; i++) {
+                paidRooms.add(filtered[i].kamar);
+            }
+
+            let unpaidRooms = rooms.filter(r => !paidRooms.has(r));
+            let paidRoomsArr = Array.from(paidRooms).sort();
+
+            document.getElementById('payment-status-summary').style.display = 'block';
+            document.getElementById('count-paid').textContent = paidRoomsArr.length;
+            document.getElementById('count-unpaid').textContent = unpaidRooms.length;
+
+            // Render Sudah Bayar
+            let paidHtml = '';
+            if(paidRoomsArr.length > 0) {
+                paidRoomsArr.forEach(r => {
+                    paidHtml += `<span class="px-2 py-1 rounded text-xs font-bold shadow-sm" style="background:#10B981; color:#fff">Kamar ${r}</span>`;
+                });
+            } else {
+                paidHtml = '<span class="text-xs italic" style="color:#065F46; opacity:0.7">Belum ada</span>';
+            }
+            document.getElementById('list-paid').innerHTML = paidHtml;
+
+            // Render Belum Bayar
+            let unpaidHtml = '';
+            if(unpaidRooms.length > 0) {
+                unpaidRooms.forEach(r => {
+                    unpaidHtml += `<span class="px-2 py-1 rounded text-xs font-bold shadow-sm" style="background:#EF4444; color:#fff">Kamar ${r}</span>`;
+                });
+            } else {
+                unpaidHtml = '<span class="text-xs font-medium" style="color:#991B1B; opacity:0.8"><i class="fas fa-check-circle mr-1"></i>Semua sudah lunas!</span>';
+            }
+            document.getElementById('list-unpaid').innerHTML = unpaidHtml;
+
+            // Update Teks Periode Status
+            let periodText = '';
+            const blnSelect = document.getElementById('filter-bulan');
+            if(bulan && tahun) {
+                periodText = `( ${blnSelect.options[blnSelect.selectedIndex].text} ${tahun} )`;
+            } else if(tahun) {
+                periodText = `( Tahun ${tahun} )`;
+            } else if(bulan) {
+                periodText = `( ${blnSelect.options[blnSelect.selectedIndex].text} )`;
+            } else {
+                periodText = `( Semua Waktu )`;
+            }
+            document.getElementById('status-period-text').textContent = periodText;
+            // --- END LOGIKA STATUS PEMBAYARAN ---
+
             const info = document.getElementById('result-info');
             const infoText = document.getElementById('result-count-text');
             info.style.display = 'inline-block';
             
-            let label = filtered.length + ' item kwitansi (data kamar)';
+            let label = filtered.length + ' kamar yang sudah diproses di periode ini';
             infoText.textContent = label;
             
             if(!filtered.length) {
@@ -961,6 +1064,7 @@
             keys.sort().reverse(); 
             for(let k=0; k<keys.length; k++) {
                 let kw = keys[k], g = grouped[kw];
+                g.items.sort((a, b) => a.kamar.localeCompare(b.kamar));
                 html += buildHistoryCard(g, kw);
             }
             c.innerHTML = html;
@@ -997,7 +1101,6 @@
                             <p class="text-sm mt-0.5" style="color:var(--muted)"><strong>Penghuni:</strong> <span id="names-text-${cardId}">${namas.join(', ')}</span></p>
                         </div>
                         <div class="flex items-center gap-3 mt-1.5 flex-wrap">
-                            <span class="text-sm" style="color:var(--muted)"><strong>Jumlah:</strong> ${g.items.length} kamar</span>
                             <span class="nominal-tag">${formatRp(totalNom)}</span>
                         </div>
                         <div id="edit-area-${cardId}" style="display:none;padding:12px;border-radius:10px;background:var(--cream);margin-top:12px"></div>
@@ -1018,6 +1121,8 @@
                 if(allHistoryData[i].no_kwitansi === kwNo) g.items.push(allHistoryData[i]);
             }
             if(!g.items.length) return;
+            
+            g.items.sort((a, b) => a.kamar.localeCompare(b.kamar));
             
             let cardId = 'hc-'+kwNo.replace(/[^a-zA-Z0-9]/g,'');
             let card = document.getElementById(cardId);
@@ -1103,6 +1208,8 @@
             let items = allHistoryData.filter(x => x.no_kwitansi === kwNo);
             if(!items.length) { showToast('Data tidak ditemukan', 'error'); return; }
             
+            items.sort((a, b) => a.kamar.localeCompare(b.kamar));
+            
             let mapped = items.map(x => ({room: x.kamar, nama: x.nama_penghuni, tanggal: x.tanggal_bayar, nominal: x.nominal||0}));
             let d = new Date(items[0].created_at || Date.now());
             buildKwitansi(mapped, kwNo, d);
@@ -1142,8 +1249,9 @@
         document.getElementById('exp-cancel-btn').addEventListener('click', resetExpForm);
         
         document.getElementById('btn-reset-exp-filter').addEventListener('click', () => {
-            document.getElementById('exp-filter-bulan').value = '';
-            document.getElementById('exp-filter-tahun').value = new Date().getFullYear();
+            const now = new Date();
+            document.getElementById('exp-filter-bulan').value = String(now.getMonth() + 1).padStart(2, '0');
+            document.getElementById('exp-filter-tahun').value = now.getFullYear();
             loadPengeluaran();
         });
         document.getElementById('exp-filter-bulan').addEventListener('change', loadPengeluaran);
@@ -1151,8 +1259,9 @@
 
         document.getElementById('btn-reload-history').addEventListener('click', loadHistory);
         document.getElementById('btn-reset-history-filter').addEventListener('click', () => {
-            document.getElementById('filter-bulan').value = '';
-            document.getElementById('filter-tahun').value = new Date().getFullYear();
+            const now = new Date();
+            document.getElementById('filter-bulan').value = String(now.getMonth() + 1).padStart(2, '0');
+            document.getElementById('filter-tahun').value = now.getFullYear();
             applyFilterHistory();
         });
         document.getElementById('filter-bulan').addEventListener('change', applyFilterHistory);
